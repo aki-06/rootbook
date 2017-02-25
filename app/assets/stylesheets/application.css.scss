@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+
+/*=====  header  ===== */
+.navbar {
+  background-color: #415D93;
+  height: 60px;
+}
+#rootbook {
+  color: #fff;
+  font-weight: bold;
+  margin-left: 180px;
+  font-size: 18px;
+  text-decoration: none;
+}
+#rootbook:hover {
+  background-color: #415D93;
+}
+#link {
+  color: #fff;
+}
+#link:hover {
+  background-color: #415D93;
+  color: #ccc;
+}
+#nav-right {
+  margin-right: 220px;
+}
+/*=====  /header  ===== */
+/*=====  content  ===== */
+body {
+  background-color: #E1E4EE;
+}
+/*=====  /content  ===== */
+
+/*=====  footer  ===== */
+footer {
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+}
+footer > p {
+  padding-top: 30px;
+}
+
+
+/*=====  /footer  ===== */
