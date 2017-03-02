@@ -1,9 +1,15 @@
 // Place all the styles related to the Top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.content {
-  height: 600px;
+
+.img-responsive {
+  margin: 0 auto;
+}
+.top-image {
+  margin: 0 auto;
+  margin-top: 40px;
 }
 img {
-  margin: 30px 0 0 100px;
+  height: 600px;
+  width: 800px;
 }
