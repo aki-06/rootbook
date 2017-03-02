@@ -1,1 +1,7 @@
-<h1>ここに投稿が表示される</h1>
+<h1>Topic一覧</h1>
+  <% @topics.each do |topic| %>
+    <p>タイトル：<%= topic.title %></p>
+    <p>本文：<%= topic.content %></p>
+  <% end %>
+
+<%= link_to "投稿", new_topic_path %>
