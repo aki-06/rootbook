@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_action :set_topic, only:[:edit, :update, :destroy]
+
   def index
     @topics = Topic.all
   end
@@ -8,12 +10,36 @@ class TopicsController < ApplicationController
   end
 
   def create
-    Topic.create(topics_params)
-    redirect_to topics_path
+    @topic = Topic.new(topics_params)
+    if @topic.save
+      redirect_to topics_path, notice: "Topicを作成しました！"
+    else
+      render 'new'
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @topic.update(topics_params)
+      redirect_to topics_path, notice: "Topicを更新しました！"
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @topic.destroy
+    redirect_to topics_path, notice: "Topicを削除しました！"
   end
 
   private
   def topics_params
     params.require(:topic).permit(:title, :content)
+  end
+
+  def set_topic
+    @topic = Topic.find(params[:id])
   end
 end
