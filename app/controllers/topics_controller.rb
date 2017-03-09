@@ -20,6 +20,7 @@ class TopicsController < ApplicationController
     if @topic.save
       flash[:success] = "Topicを作成しました！"
       redirect_to topics_path
+      NoticeMailer.sendmail_topic(@topic).deliver
     else
       render 'new'
     end
