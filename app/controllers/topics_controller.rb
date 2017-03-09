@@ -19,8 +19,8 @@ class TopicsController < ApplicationController
     @topic.user_id = current_user.id
     if @topic.save
       flash[:success] = "Topicを作成しました！"
-      redirect_to topics_path
       NoticeMailer.sendmail_topic(@topic).deliver
+      redirect_to topics_path
     else
       render 'new'
     end
