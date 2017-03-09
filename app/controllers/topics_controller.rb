@@ -19,7 +19,8 @@ class TopicsController < ApplicationController
     @topic = Topic.new(topics_params)
     @topic.user_id = current_user.id
     if @topic.save
-      redirect_to topics_path, notice: "Topicを作成しました！"
+      flash[:success] = "Topicを作成しました！"
+      redirect_to topics_path
     else
       render 'new'
     end
@@ -30,7 +31,8 @@ class TopicsController < ApplicationController
 
   def update
     if @topic.update(topics_params)
-      redirect_to topics_path, notice: "Topicを更新しました！"
+      flash[:info] = "Topicを更新しました！"
+      redirect_to topics_path
     else
       render 'edit'
     end
@@ -38,7 +40,8 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic.destroy
-    redirect_to topics_path, notice: "Topicを削除しました！"
+    flash[:danger] = "Topicを削除しました！"
+    redirect_to topics_path
   end
 
   def confirm
