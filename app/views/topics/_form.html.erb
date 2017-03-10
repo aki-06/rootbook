@@ -2,16 +2,7 @@
   <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
 
 <%= form_for(@topic, url: choose_new_or_edit) do |f| %>
-<% if @topic.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= @topic.errors.count %>件のエラーがあります。</h2>
-    <ul>
-      <% @topic.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= f.error_messages! %>
 
   <%= f.label :title %>
   <%= f.text_field :title, class: 'form-control' %>
