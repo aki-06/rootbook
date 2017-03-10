@@ -50,3 +50,6 @@ gem 'rails_12factor', group: :production
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'therubyracer'
+gem 'cancan'
