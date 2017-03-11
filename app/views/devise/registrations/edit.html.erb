@@ -1,51 +1,61 @@
 <div class="container">
   <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
-<h2>プロフィール</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= error_messages! %>
+  <h2>プロフィールを編集する</h2>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: "form-control" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_messages! %>
+
+　<% unless current_user.provider == 'facebook' || current_user.provider == 'twitter' %>
+    <div class="field">
+      <%= f.label :メールアドレス %><br />
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= f.label :名前 %><br />
     <%= f.text_field :name, class: "form-control" %>
-  </div>
+  </div><br />
+
+<% if @user.provider.blank? %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
-    <%= f.label :password %><em>(<%= @minimum_password_length %>文字以上</em>)<br />
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-    <% if @minimum_password_length %>
-    <% end %>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :current_password %><br />
-    <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+    <%= f.password_field :current_password, class: "form-control" %>
   </div><br />
+<% end %>
+
+  <div class="field">
+    <%= profile_img(@user) if profile_img(@user) %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </div>
 
   <div class="actions">
-    <%= f.submit "更新", class: "btn btn-primary" %>
+    <%= f.submit "更新", class: "btn btn-primary btn-block" %>
   </div>
 <% end %>
 
 <h3>退会する</h3>
 
-<p><%= button_to "退会", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+<%= button_to "退会", registration_path(resource_name), data: { confirm: "本当に退会しますか？" }, method: :delete, class: 'btn btn-default btn-sm btn btn-danger' %></p>
 
-<%= link_to "戻る", :back %>
+<%= link_to "TOPに戻る", root_path %>
 
 </div>
 </div>

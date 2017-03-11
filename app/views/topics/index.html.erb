@@ -6,10 +6,16 @@
     <h1>Topic一覧</h1>
       <%= link_to "投稿", new_topic_path, class:'btn btn-default' %>
       <% @topics.each do |topic| %>
-        <p>タイトル：<%= topic.title %></p>
-        <p>本文：<%= topic.content %></p>
-        <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
-        <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除してもよろしいですか？'}, class: 'btn btn-default btn-sm btn-danger' %>
+      <div class="topic">
+          <p class="user_name"><%= topic.user.name %></p>
+          <p class="profile_img"><%= profile_img(topic.user) %></p>
+          <p>タイトル：<%= topic.title %></p>
+          <p>本文：<%= topic.content %></p>
+          <div class="btn">
+            <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
+            <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除してもよろしいですか？'}, class: 'btn btn-default btn-sm btn-danger' %>
+          </div>
+      </div>
       <% end %>
     </div>
   </div>
