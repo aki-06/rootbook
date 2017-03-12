@@ -1,8 +1,6 @@
 <div class="container">
   <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
 
-  <h2>プロフィールを編集する</h2>
-
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_messages! %>
 
@@ -10,7 +8,7 @@
     <div class="field">
       <%= f.label :メールアドレス %><br />
       <%= f.email_field :email, class: "form-control" %>
-    </div>
+    </div><br />
   <% end %>
 
   <div class="field">
@@ -27,12 +25,12 @@
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password, class: "form-control" %>
-  </div>
+  </div><br />
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, class: "form-control" %>
-  </div>
+  </div><br />
 
   <div class="field">
     <%= f.label :current_password %><br />

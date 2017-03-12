@@ -3,18 +3,19 @@
     <% flash.each do |message_type, message| %>
      <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
-    <h1>Topic一覧</h1>
-      <%= link_to "投稿", new_topic_path, class:'btn btn-default' %>
+      <%= link_to "投稿", new_topic_path, class:'btn btn-primary' %>
       <% @topics.each do |topic| %>
-      <div class="topic">
+      <div class="row topics">
           <p class="user_name"><%= topic.user.name %></p>
           <p class="profile_img"><%= profile_img(topic.user) %></p>
-          <p>タイトル：<%= topic.title %></p>
-          <p>本文：<%= topic.content %></p>
-          <div class="btn">
-            <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
-            <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除してもよろしいですか？'}, class: 'btn btn-default btn-sm btn-danger' %>
-          </div>
+          <%= link_to topic_path(topic) do %>
+          <p><strong><%= topic.title %></strong></p>
+          <% end %>
+          <p><%= topic.content %></p>
+          <% if current_user.id == topic.user.id %>
+            <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-success' %>
+            <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除してもよろしいですか？'}, class: 'btn btn-default btn-danger' %>
+          <% end %>
       </div>
       <% end %>
     </div>
