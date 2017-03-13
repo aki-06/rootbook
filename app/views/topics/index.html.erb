@@ -4,7 +4,7 @@
      <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
       <%= link_to "投稿", new_topic_path, class:'btn btn-primary' %>
-      <% @topics.each do |topic| %>
+      <% @topics_follow.each do |topic| %>
       <div class="row topics">
           <p class="user_name"><%= topic.user.name %></p>
           <p class="profile_img"><%= profile_img(topic.user) %></p>

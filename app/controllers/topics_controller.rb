@@ -4,6 +4,8 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.all.reverse_order
+    @topics_ids = current_user.followed_user_ids << current_user
+    @topics_follow = Topic.where(user_id: @topics_ids)
   end
 
   def show
