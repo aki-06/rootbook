@@ -1,6 +1,15 @@
 <div class="container top-image">
-  <p class="flash"><%= notice %><%= alert %></p>
+<div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+  <!-- <% flash.each do |message_type, message| %>
+   <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %> -->
+  <!-- <p class="flash"><%= notice %><%= alert %></p> -->
+  <% flash.each do |key, value| %>
+  <% status = key == :notice ? "success" : "success" %>
+  <%= content_tag(:div, value, class: "alert alert-#{status}") %>
+<% end %>
   <img src="<%= asset_path "top-image2.png" %>" class="img-responsive center-block">
+</div>
 </div>
 <footer class="footer">
   <p>Copyright &copy; 2017 copyright Akihiro Nemoto All Rights Reserved.</p>
