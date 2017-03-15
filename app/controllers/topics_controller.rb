@@ -3,9 +3,9 @@ class TopicsController < ApplicationController
   before_action :set_topic, only:[:edit, :update, :destroy, :show]
 
   def index
-    @topics = Topic.all.reverse_order
+    @topics = Topic.all
     @topics_ids = current_user.followed_user_ids << current_user
-    @topics_follow = Topic.where(user_id: @topics_ids)
+    @topics_follow = Topic.where(user_id: @topics_ids).reverse_order
   end
 
   def show
