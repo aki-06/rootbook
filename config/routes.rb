@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'notifications/index'
+
   root 'top#index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

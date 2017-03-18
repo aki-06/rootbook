@@ -11,6 +11,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <% if user_signed_in? %>
+  <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
+  <script>
+    var pusher = new Pusher('<%= ENV["PUSHER_KEY"] %>',{
+      encrypted: true
+    });
+
+    var channel = pusher.subscribe("user_<%= current_user.id %>_channel");
+    channel.bind('comment_created', function(data) {
+      alert(data.message);
+    });
+    channel.bind('notification_created', function(data) {
+        $('#unread_count').html(data.unread_counts);
+      });
+  </script>
+  <% end %>
+</head>
 </head>
 <body>
 <%= render 'layouts/header' %>

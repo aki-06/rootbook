@@ -61,3 +61,5 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'pusher'
+
