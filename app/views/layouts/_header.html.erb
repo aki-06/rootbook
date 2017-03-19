@@ -15,7 +15,6 @@
         <div id="gnavi" class="collapse navbar-collapse navbar-right">
           <ul class="nav navbar-nav">
             <% if user_signed_in? %>
-              <li class="login_img"><%= profile_img(current_user) %></li>
               <li>
                 <%= link_to edit_user_registration_path do %>
                 <%= current_user.name %>

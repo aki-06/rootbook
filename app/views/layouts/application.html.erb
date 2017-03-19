@@ -23,6 +23,7 @@
     channel.bind('comment_created', function(data) {
       alert(data.message);
     });
+        
     channel.bind('notification_created', function(data) {
         $('#unread_count').html(data.unread_counts);
       });
