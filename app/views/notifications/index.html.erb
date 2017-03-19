@@ -4,7 +4,13 @@
 <h2>お知らせ</h2>
   <% @notifications.each do |notification| %>
   <div class="notification">
-      <span><%= notification.read %></span>
+      <span>
+        <% if notification.read == false %>
+          <p>未読</p>
+        <% else %>
+          <p>既読</p>
+        <% end %>
+      </span>
       <p>
         <%= notification.comment.user.try(:name) %>さんが
         あなたのTopic（<%= link_to "#{notification.comment.topic.title}", topic_path(notification.comment.topic, notification_id: notification.id) %>）にコメントしました。
