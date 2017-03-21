@@ -1,5 +1,6 @@
 <div class="container">
   <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
+    <div class="row">
 
 <%= form_for(@topic, url: choose_new_or_edit) do |f| %>
 <%= f.error_messages! %>
@@ -12,5 +13,6 @@
   <br>
   <%= f.submit "投稿", class: 'btn btn-primary btn-block' %>
 <% end %>
+</div>
 </div>
 </div>
