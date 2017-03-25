@@ -4,7 +4,7 @@ lock '3.6.0'
 set :application, 'rootbook'
 
 # cloneするgitのレポジトリ（xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'https://github.com/akihironemoto/rootbook.git'
+set :repo_url, 'https://github.com/akihironemoto/rootbook'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
@@ -25,6 +25,8 @@ set :rbenv_type, :system
 
 #出力するログのレベル。
 set :log_level, :debug
+
+set :pty, true
 
 namespace :deploy do
   desc 'Restart application'
