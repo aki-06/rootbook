@@ -22,7 +22,7 @@
               </li>
               <li>
                 <%= link_to notifications_index_path, class: "navber-brand" do %>
-                  <i class="fa fa-bell fa-1x"><span id="unread_count"><%= @notifications_count %></span></i>
+                  <span id="unread_count"><%= @notifications_count %></span>
                 <% end %>
               </li>
               <li><%= link_to "Topic", topics_path %></li>
