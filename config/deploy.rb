@@ -4,7 +4,7 @@ lock '3.6.0'
 set :application, 'rootbook'
 
 # cloneするgitのレポジトリ（xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'https://github.com/akihironemoto/rootbook'
+set :repo_url, 'https://github.com/akihironemoto/rootbook.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
