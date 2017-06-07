@@ -1,0 +1,27 @@
+current directory: /Users/akihiro/workspace/rootbook/vendor/bundle/gems/unicorn-5.2.0/ext/unicorn_http
+/Users/akihiro/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20170417-93241-6sh7pz.rb extconf.rb 
+Ignoring therubyracer-0.12.3 because its extensions are not built.  Try: gem pristine therubyracer --version 0.12.3
+checking for SIZEOF_OFF_T in ruby.h... yes
+checking for SIZEOF_SIZE_T in ruby.h... yes
+checking for SIZEOF_LONG in ruby.h... yes
+checking for rb_str_set_len() in ruby.h... yes
+checking for rb_hash_clear() in ruby.h... yes
+checking for gmtime_r() in time.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/akihiro/workspace/rootbook/vendor/bundle/extensions/x86_64-darwin-16/2.3.0-static/unicorn-5.2.0/mkmf.log
+
+current directory: /Users/akihiro/workspace/rootbook/vendor/bundle/gems/unicorn-5.2.0/ext/unicorn_http
+make "DESTDIR=" clean
+
+current directory: /Users/akihiro/workspace/rootbook/vendor/bundle/gems/unicorn-5.2.0/ext/unicorn_http
+make "DESTDIR="
+compiling httpdate.c
+compiling unicorn_http.c
+linking shared-object unicorn_http.bundle
+
+current directory: /Users/akihiro/workspace/rootbook/vendor/bundle/gems/unicorn-5.2.0/ext/unicorn_http
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 unicorn_http.bundle ./.gem.20170417-93241-1bx97s5

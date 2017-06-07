@@ -6,14 +6,17 @@
     <%= form_for(@topic) do |f| %>
     <%= f.hidden_field :title %>
     <%= f.hidden_field :content %>
+    <%= f.hidden_field :image %>
       <p>タイトル:<%= @topic.title %></p>
       <p>本文:<%= @topic.content %></p>
+      <p>写真:<%= @topic.image %></p>
     <%= f.submit "投稿する", class: 'btn btn-primary btn-block' %>
     <% end %>
 
     <%= form_for(@topic, url: new_topic_path, method: 'get') do |f| %>
       <%= f.hidden_field :title %>
       <%= f.hidden_field :content %>
+      <%= f.hidden_field :image %>
       <%= f.submit "戻る", name: 'back', class: 'btn btn-default btn-block' %>
     <% end %>
   </div>

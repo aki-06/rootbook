@@ -1,0 +1,27 @@
+current directory: /Users/akihiro/workspace/rootbook/vendor/bundle/gems/byebug-9.0.6/ext/byebug
+/Users/akihiro/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20170417-93241-1q9s1q8.rb extconf.rb 
+Ignoring binding_of_caller-0.7.2 because its extensions are not built.  Try: gem pristine binding_of_caller --version 0.7.2
+Ignoring kgio-2.11.0 because its extensions are not built.  Try: gem pristine kgio --version 2.11.0
+Ignoring nokogiri-1.7.0.1 because its extensions are not built.  Try: gem pristine nokogiri --version 1.7.0.1
+Ignoring pg-0.19.0 because its extensions are not built.  Try: gem pristine pg --version 0.19.0
+Ignoring raindrops-0.18.0 because its extensions are not built.  Try: gem pristine raindrops --version 0.18.0
+Ignoring rmagick-2.16.0 because its extensions are not built.  Try: gem pristine rmagick --version 2.16.0
+Ignoring therubyracer-0.12.3 because its extensions are not built.  Try: gem pristine therubyracer --version 0.12.3
+Ignoring unicorn-5.2.0 because its extensions are not built.  Try: gem pristine unicorn --version 5.2.0
+creating Makefile
+
+current directory: /Users/akihiro/workspace/rootbook/vendor/bundle/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/akihiro/workspace/rootbook/vendor/bundle/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/akihiro/workspace/rootbook/vendor/bundle/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20170417-93241-1aeeg8q/byebug
