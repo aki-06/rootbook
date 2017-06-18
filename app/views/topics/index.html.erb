@@ -12,7 +12,7 @@
           <p><strong><%= topic.title %></strong></p>
           <% end %>
           <p><%= topic.content %></p>
-          <p><%= image_tag topic.image.to_s %></p>
+          <p><%= image_tag topic.image %></p>
           <% if current_user.id == topic.user.id %>
             <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-success' %>
             <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除してもよろしいですか？'}, class: 'btn btn-default btn-danger' %>
