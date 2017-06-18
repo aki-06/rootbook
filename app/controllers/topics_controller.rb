@@ -27,7 +27,7 @@ class TopicsController < ApplicationController
     @topic.user_id = current_user.id
     if @topic.save
       flash[:success] = "Topicを作成しました！"
-      NoticeMailer.sendmail_topic(@topic).deliver
+      # NoticeMailer.sendmail_topic(@topic).deliver
       redirect_to topics_path
     else
       render 'new'
@@ -59,7 +59,7 @@ class TopicsController < ApplicationController
 
   private
   def topics_params
-    params.require(:topic).permit(:title, :content)
+    params.require(:topic).permit(:title, :content, :image, :image_cache)
   end
 
   def set_topic

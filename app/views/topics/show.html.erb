@@ -7,7 +7,7 @@
       <p class="left"><strong><%= @topic.user.name %></strong></p>
       <p class="left"><%= @topic.title %></p>
       <p class="left"><%= @topic.content %></p>
-      <p class="left"><%= @topic.image %></p>
+      <p class="left"><%= @topic.image.url %></p>
       <p class="right">
         <strong>作成時間:</strong>
         <%= @topic.created_at.strftime("%y/%m/%d %p %l:%M") %>
