@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: rootbook_production
+  database: rootbook_production2
   username: rootbook
   password: <%= ENV['ROOTBOOK_DATABASE_PASSWORD'] %>
