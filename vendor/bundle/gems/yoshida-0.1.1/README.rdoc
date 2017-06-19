@@ -1,0 +1,67 @@
+= 吉田
+
+Yoshida（吉田）はサンプルの文や単語を生成するfixture作成のためのgemです。
+徒然草の全500余の文から単語と文章を返します。
+
+== インストール
+
+  gem install yoshida
+  
+Railsと合わせて使用する場合はGemfileの中で、
+  
+  gem "yoshida"
+
+development環境やtest環境のみで使用したい場合はGemfileの中で以下に類する指定をします。
+
+  group :development, :test do
+    gem "yoshida"
+  end
+
+== 使い方
+
+  require 'yoshida'
+  
+  # Yoshida::Text.wordで単語1つ。
+  Yoshida::Text.word
+  => "卒都婆外"
+  
+  # Yoshida::Text.words(num)で単語の入ったArrayを返す。
+  # デフォルトでは3語。
+  Yoshida::Text.words
+  => ["建礼門院", "囲", "水火"]
+  
+  Yoshida::Text.words(5)
+  ["見返", "乗", "芝", "皆非", "事常"]
+  
+  # Yoshida::Text.sentenceで1文を返す。
+  Yoshida::Text.sentence
+  "改めて益なき事は、改めぬを力とするなり。"
+  
+  # Yoshida::Text.sentences(num)で複数の文の入ったArrayを返す。
+  # デフォルトでは2文を返す。
+  Yoshida::Text.sentences
+  => ["四十以後の人、身に灸を加へて、三里を焼かざれば、上気の事あり。必ず灸すべし。", "道を知らざらん人、かばかり恐れなんや。"]
+  
+  Yoshida::Text.sentences(3)
+  => ["人觝く牛をば角を截り、人喰ふ馬をば耳を截りて、その標とす。標を附けずして人を傷らせぬるは、主の咎なり。人喰ふ犬をば養ひ飼ふべからず。これ皆、咎あり。律の禁なり。", "万の道の人、たとひ不堪なりといへども、堪能の非家の人に並ぶ時、必ず勝る事は、弛みなく慎みて軽々しくせぬと、偏へに自由なるとの等しからぬなり。"]
+
+== 必要な環境
+
+* ruby-1.8.7-p334以降
+
+== ロードマップ
+
+* 徒然草の中のひらがな単語の数を増やす。現在約200語。1000から1500語になる予定。
+* 吉田兼好以外のブロガーの文および単語を使用したサンプル生成機能の追加。
+  Yoshida::Text_Kino.words(num)のような形で、例えば紀貫之の土佐日記に基づくサンプルを出力できる。
+* 名前データ出力機能の追加
+  yoshida、kinoのようなユーザー名向きの文字列のほか、山田や田中のような苗字、太郎や花子のような名前のサンプルを生成する機能の追加。
+* 日本国内のランダムな緯度経度を出力する機能の追加。
+* 郵便番号、都道府県、区市町村区名を出力する昨日の追加。
+* ランダムな電話番号を出力する昨日の追加
+* ランダムなEメールアドレス、URLを出力する機能の追加。
+* CLIの追加。
+
+== LICENSE:
+
+Copyright (c) 2011 Kichiro IKEMOTO. See LICENSE for details.
