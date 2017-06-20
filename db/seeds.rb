@@ -1,14 +1,14 @@
 # コメント
-# 20.times do
-#   user_id = [*1..20].sample
-#   topic_id = [*1..20].sample
-#   content = Yoshida::Text.sentence
-#   Comment.create!(
-#     user_id: user_id,
-#     topic_id: topic_id,
-#     content: content
-#   )
-# end
+20.times do
+  user_id = [*1..20].sample
+  topic_id = [*1..20].sample
+  content = Yoshida::Text.sentence
+  Comment.create!(
+    user_id: user_id,
+    topic_id: topic_id,
+    content: content
+  )
+end
 
 #ユーザー
 # 20.times do
@@ -30,16 +30,16 @@
 # end
 
 #Topic
-20.times do
-  user_id = [*1..20].sample
-  title = Yoshida::Text.sentences(4).join
-  content = Yoshida::Text.sentences(4).join
-  num = format('%03d', [*001..141].sample)
-  image = "http://towncat.yokochou.com/images/#{num}.jpg"
-  Topic.create!(
-    user_id: user_id,
-    title: title,
-    content: content,
-    image: image
-  )
-end
+# 20.times do
+#   user_id = [*1..20].sample
+#   title = Yoshida::Text.sentences(4).join
+#   content = Yoshida::Text.sentences(4).join
+#   num = format('%03d', [*001..141].sample)
+#   image = "http://towncat.yokochou.com/images/#{num}.jpg"
+#   Topic.create!(
+#     user_id: user_id,
+#     title: title,
+#     content: content,
+#     image: image
+#   )
+# end
