@@ -1,0 +1,28 @@
+%body
+  %header
+    %nav.navbar.navbar-default
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#gnavi", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only メニュー
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          .navbar-brand{:style => "padding: 3px;"}
+            = link_to "rootbook", root_path, id: "rootbook"
+        #gnavi.collapse.navbar-collapse.navbar-right
+          %ul.nav.navbar-nav
+            - if user_signed_in?
+              %li
+                = link_to edit_user_registration_path do
+                  = current_user.name
+              %li
+                = link_to notifications_index_path, class: "navber-brand" do
+                  %span#unread_count= @notifications_count
+              %li= link_to "Topic", topics_path
+              %li= link_to 'ユーザー一覧', users_path
+              %li= link_to "メッセージ", conversations_path
+              %li= link_to "ログアウト", destroy_user_session_path, method: :delete
+            - else
+              %li= link_to "ログイン", new_user_session_path
+              %li= link_to "新規登録", new_user_registration_path

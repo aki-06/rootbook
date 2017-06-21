@@ -1,0 +1,15 @@
+.container
+  .wrapper.col-md-8.col-md-offset-2.col-sm-10
+    %h2 お知らせ
+    - @notifications.each do |notification|
+      .notification
+        %span
+          - if notification.read == false
+            %p 未読
+          - else
+            %p 既読
+        %p
+          = notification.comment.user.try(:name)
+          さんが
+          あなたのTopic（#{link_to "#{notification.comment.topic.title}", topic_path(notification.comment.topic, notification_id: notification.id)}）にコメントしました。
+        %p= notification.created_at

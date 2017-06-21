@@ -1,0 +1,8 @@
+.container
+  .wrapper.col-md-8.col-md-offset-2.col-sm-10
+    - flash.each do |key, value|
+      - status = key == :notice ? "success" : "success"
+      = content_tag(:div, value, class: "alert alert-#{status}")
+    %img#top-img{:src => "#{asset_path "top-image2.png"}"}/
+%footer.footer
+  %p Copyright © 2017 copyright Akihiro Nemoto All Rights Reserved.

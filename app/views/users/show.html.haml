@@ -1,0 +1,16 @@
+%h2.page-user-img= profile_img(@user)
+%h2.user-name= @user.name
+.container.col-md-6.col-sm-6.col-xs-6
+  %p
+    = @user.followed_users.count
+    フォロー
+  - @user.followed_users.each do |followed|
+    %p.followed-img= profile_img(followed)
+    %p= link_to followed.name, user_path(followed)
+.container.col-md-6.col-sm-6.col-xs-6
+  %p
+    = @user.followers.count
+    フォロワー
+  - @user.followers.each do |follower|
+    %p.follower-img= profile_img(follower)
+    %p= link_to follower.name, user_path(follower)

@@ -1,0 +1,7 @@
+.container
+  .wrapper.col-md-8.col-md-offset-2.col-sm-10
+    %h2 メッセージ
+    - @conversations.each do |conversation|
+      - if conversation.target_user(current_user).present?
+        .conversation
+          = link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)

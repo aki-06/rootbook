@@ -1,0 +1,7 @@
+%h1 新しいTopicが投稿されました！
+%h4
+  title: #{@topic.title}
+%p
+  content: #{@topic.content}
+%p
+  = link_to '投稿されたTopicはこちら', topics_url

@@ -1,0 +1,11 @@
+%ul
+  - comments.each do |comment|
+    - unless comment.id.nil?
+      %li
+        %p.profile_img= profile_img(comment.user)
+        %p.left= comment.user.name
+        %p.left= comment.content
+        - if current_user.id == comment.user.id
+          %p.right
+            = link_to '編集', edit_topic_comment_path(comment.topic_id, comment), class: 'btn btn-success btn-sm' if comment.user_id == current_user.id
+            = link_to '削除', topic_comment_path(comment.topic_id, comment.id), method: :delete, remote: true, class: 'btn btn-danger btn-sm' if comment.user_id == current_user.id
